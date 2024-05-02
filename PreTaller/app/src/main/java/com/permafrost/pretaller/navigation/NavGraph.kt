@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.permafrost.pretaller.FirstScreen
+import com.permafrost.pretaller.ui.theme.SecondScreen
 
 @Composable
 fun SetupNavGraph(navController: NavHostController) {
@@ -17,6 +18,12 @@ fun SetupNavGraph(navController: NavHostController) {
             route = Screens.FirstScreen.route
         ) {
             FirstScreen(navController = navController)
+        }
+
+        composable(
+            route = Screens.SecondScreen.route
+        ) {
+            SecondScreen(navController = navController)
         }
 
 

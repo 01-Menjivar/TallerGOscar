@@ -22,7 +22,15 @@ fun SecondScreen(navController: NavController){
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ){
-            Text(text = "Second Screen", modifier = Modifier.clickable { navController.navigate(route = Screens.FirstScreen.route) })
+            Text(text = "Second Screen", modifier = Modifier
+                .clickable { navController.navigate(route = Screens.FirstScreen.route){
+                    popUpTo(Screens.FirstScreen.route){
+                        inclusive = true
+                    }
+
+                }
+
+                })
         }
     }
 }
